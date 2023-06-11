@@ -20,7 +20,7 @@ func main() {
 		// route to / path and a handler function that returns a JSON of Hello from Gin-gonic & mongoDB.
         router.GET("/", func(c *gin.Context) {
                 c.JSON(200, gin.H{
-                        "data": "Hello from Gin-gonic & mongoDB",
+                        "data": "Hello from My Go Shopping App (Gin-gonic & mongoDB)",
                 })
         })
 
