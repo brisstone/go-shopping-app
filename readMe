@@ -1,0 +1,43 @@
+
+ go get -u 
+
+ github.com/gin-gonic/gin  is a framework for building web applications.
+ go.mongodb.org/mongo-driver/mongo is a driver for connecting to MongoDB.
+ github.com/joho/godotenv is a library for managing environment variables.
+ github.com/go-playground/validator/v10  is a library for validating structs and fields.
+github.com/golang-jwt/jwt
+golang.org/x/crypto/bcrypt
+
+gin-mongo-api/configs
+
+TO RUN THE APP
+go run main.go
+
+
+INSTALL PACKAGE
+go get -u  <package>
+
+INSTALL PACKAGE ALONG WITH IT'S DEPENDENCIES
+go get -u  <package>
+
+INSTALL PARTICULAR PACKAGE VERSION
+go get <package>@v1.11.7
+
+TO UNINSTALL/REMOVE A PACKAGE
+remove the package from go.mod
+run: go mod tidy 
+
+
+
+
+
+HELP
+* HAVING ISSUES WITH MONGO DB CONNECTIONS
+ERROR TYPE 1: error parsing uri: lookup cluster0.xi14f.mongodb.net on 172.20.10.1:53: cannot unmarshal DNS message
+
+ERROR TYPE 2: 
+server selection error: context deadline exceeded, current topology: { Type: ReplicaSetNoPrimary, Servers: [] }
+
+
+POSSIBLE SOLUTION
+Verify DNS settings: Double-check your DNS settings on your Mac. You can go to "System Preferences" -> "Network" -> select your active network connection (Wi-Fi or Ethernet) -> click on "Advanced" -> go to the "DNS" tab. Ensure that the DNS server addresses listed there are correct and functioning. You may consider using public DNS servers like Google DNS (8.8.8.8 and 8.8.4.4) or Cloudflare DNS (1.1.1.1 and 1.0.0.1).
