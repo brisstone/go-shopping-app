@@ -25,5 +25,6 @@ func main() {
         })
 
 		//Configure port
-        router.Run("localhost:4000") 
+        // router.Run("localhost:4000") 
+		router.Run(":80")
 }
