@@ -51,7 +51,7 @@ func main() {
 	})
 
 	//Configure port
-	router.Run("localhost:8080")
-	// router.Run(":80")
+	// router.Run("localhost:8080")
+	router.Run(":80")
 	//Access on localhost:80
 }
