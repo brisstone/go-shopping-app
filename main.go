@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"shopping-app/configs" //add this
 	"shopping-app/routes"
-	"time"
+	// "time"
 )
 
 func main() {
@@ -21,19 +21,19 @@ func main() {
 	// - Origin header
 	// - Credentials share
 	// - Preflight requests cached for 12 hours
-	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"*", "http://localhost:5173"},
-		AllowMethods:     []string{"PUT", "PATCH", "POST", "GET"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			return origin == "http://localhost:5173"
-		},
-		MaxAge: 12 * time.Hour,
-	}))
+	// router.Use(cors.New(cors.Config{
+	// 	AllowOrigins:     []string{"*", "http://localhost:5173"},
+	// 	AllowMethods:     []string{"PUT", "PATCH", "POST", "GET"},
+	// 	AllowHeaders:     []string{"Origin"},
+	// 	ExposeHeaders:    []string{"Content-Length"},
+	// 	AllowCredentials: true,
+	// 	AllowOriginFunc: func(origin string) bool {
+	// 		return origin == "http://localhost:5173"
+	// 	},
+	// 	MaxAge: 12 * time.Hour,
+	// }))
 	// router.Run()
-	// router.Use(cors.Default())
+	router.Use(cors.Default())
 
 
 
@@ -51,7 +51,7 @@ func main() {
 	})
 
 	//Configure port
-	// router.Run("localhost:8080")
-	router.Run(":80")
+	router.Run("localhost:8080")
+	// router.Run(":80")
 	//Access on localhost:80
 }
