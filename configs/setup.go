@@ -14,20 +14,11 @@ import (
 func ConnectDB() *mongo.Client {
 	// Create a ConnectDB function that first configures the client to use
 	// the correct URI and check for errors.
-	log.Print(EnvMongoURI())
+
 	client, err := mongo.NewClient(options.Client().ApplyURI(EnvMongoURI()))
 	if err != nil {
 	    log.Fatal(err)
 	}
-
-	// client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(EnvMongoURI()))
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// if err := client.Ping(context.TODO(), readpref.Primary()); err != nil {
-	// 	panic(err)
-	// }
 
 	// defined a timeout of 10 seconds we wanted to use when trying to connect.
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)

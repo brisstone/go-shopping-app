@@ -18,7 +18,7 @@ func EnvMongoURI() string {
     //Adding below fails on render, so I added GO_ENV in my machine environment variables 
     //by running: <export GO_ENV=development>  in my terminal 
     // To confirm value, run: echo $GO_ENV
-    
+    log.Print(os.Getenv("GO_ENV"))
 
 	if envValue == "development" {
         //To prevent it from running on render 
